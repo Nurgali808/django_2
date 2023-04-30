@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+
+    <div class="post-form">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1 style="text-align: center;">Создать пост</h1>
+                {{ form.as_p }}
+                <button>Опубликовать</button>
+            </form>
+        </div>
+
+{% endblock content %}
